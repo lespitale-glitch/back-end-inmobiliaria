@@ -118,20 +118,20 @@ A continuación, se presentan 3 documentos reales por cada colección que demues
 [
   {
     "_id": { "$oid": "66d5e1b1c3a2b4e5f6a70001" },
-    "nombre": "Ana Martínez",
-    "email": "ana.martinez@tuinmobiliaria.com",
+    "nombre": "Leandro Spitale",
+    "email": "ana.martinez@nuevotecho.com",
     "rol": "administrador"
   },
   {
     "_id": { "$oid": "66d5e1b1c3a2b4e5f6a70002" },
-    "nombre": "Carlos Gómez",
-    "email": "carlos.gomez@tuinmobiliaria.com",
+    "nombre": "Phil Dunphy",
+    "email": "Phil.Dunphy@nuevotecho.com",
     "rol": "agente"
   },
   {
     "_id": { "$oid": "66d5e1b1c3a2b4e5f6a70003" },
-    "nombre": "Lucía Fernández",
-    "email": "lucia.fernandez@tuinmobiliaria.com",
+    "nombre": "Gil Thorpe",
+    "email": "Gil.Thorpe@nuevotecho.com",
     "rol": "agente"
   }
 ]
