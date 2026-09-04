@@ -15,7 +15,7 @@ A diferencia de un portal público genérico donde cualquiera puede registrarse 
 
 ## Sección 2: Diagrama del Modelo de Datos
 
-A continuación se detalla la estructura lógica de la base de datos mediante un diagrama de entidad-relación usando la sintaxis de **Mermaid**, la cual se renderiza de forma visual y nativa directamente al abrir el archivo en la interfaz de GitHub.
+Estructura lógica y relaciones del modelo (DER):
 
 ```mermaid
 erDiagram
