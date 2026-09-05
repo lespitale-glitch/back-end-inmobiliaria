@@ -15,7 +15,7 @@ A diferencia de un portal público genérico donde cualquiera puede registrarse 
 
 ## Sección 2: Diagrama del Modelo de Datos
 
-A continuación se detalla la estructura lógica de la base de datos mediante un diagrama de entidad-relación usando la sintaxis de **Mermaid**, la cual se renderiza de forma visual y nativa directamente al abrir el archivo en la interfaz de GitHub.
+Estructura lógica y relaciones del modelo (DER).
 
 ```mermaid
 erDiagram
@@ -113,7 +113,7 @@ Almacena los mensajes enviados por los clientes a través del formulario de cont
 Para estructurar la base de datos de Nuevo Techo elegí un enfoque híbrido, decidiendo con criterio qué datos conviene tener separados y cuáles conviene agrupar para que la web ande rápido y sin errores:
 
 1.  **Colección `Tipos_Propiedad` (Referenciada):**
-    *   **Para evitar un quilombo en los filtros:** Si ponía el tipo de propiedad como un simple texto libre embebido dentro de cada inmueble (ej. `tipo: "Depto"`), los agentes iban a escribir cualquier cosa por error. Uno iba a poner "Depto", otro "departamento", otro "Dpto" o "PH" con minúsculas. Cuando quisiéramos programar el buscador filtrado en React, se nos iba a romper todo o iba a ser un dolor de cabeza unificar criterios. Referenciar una colección estricta obliga a usar categorías estandarizadas.
+    *   **Para evitar un problemas en los filtros:** Si ponía el tipo de propiedad como un simple texto libre embebido dentro de cada inmueble (ej. `tipo: "Depto"`), los agentes iban a escribir cualquier cosa por error. Uno iba a poner "Depto", otro "departamento", otro "Dpto" o "PH" con minúsculas. Cuando quisiéramos programar el buscador filtrado en React, se nos iba a romper todo o iba a ser un dolor de cabeza unificar criterios. Referenciar una colección estricta obliga a usar categorías estandarizadas.
     *   **Mantenibilidad total:** Si en el futuro decidimos renombrar la categoría `"Oficina"` por `"Local / Oficina Comercial"`, solo editamos un documento en `Tipos_Propiedad` y el cambio impacta de inmediato en todas las propiedades y contactos vinculados.
 2.  **Colección `Usuarios` / Agentes (Referenciada):**
     *   **Evitar redundancia ineficiente:** Un mismo agente de Nuevo Techo va a administrar múltiples propiedades de la cartera. Si embebiéramos toda su información de contacto (nombre, email y contraseña encriptada) adentro de cada propiedad que tiene a cargo, estaríamos duplicando datos sensibles de forma masiva. Además, si ese agente cambia de correo, actualizar el dato en 50 casas por separado sería recontra ineficiente. Con la referencia `agente_id`, el empleado se edita en un único lugar de la colección `Usuarios` y listo.
@@ -179,7 +179,7 @@ A continuación, se presentan documentos de prueba consistentes entre sí por ca
 ]
 ```
 
-### 3. Documentos de la Colección: `Propiedades` *(Basado en las Cards reales de tu web)*
+### 3. Documentos de la Colección: `Propiedades` 
 ```json
 [
   {
@@ -224,7 +224,7 @@ A continuación, se presentan documentos de prueba consistentes entre sí por ca
 ]
 ```
 
-### 4. Documentos de la Colección: `Contactos` *(Basado en el Formulario real de tu web)*
+### 4. Documentos de la Colección: `Contactos` 
 ```json
 [
   {
