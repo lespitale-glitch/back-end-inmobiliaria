@@ -1,4 +1,4 @@
-# Trabajo Práctico Intermedio: Diseño del Modelo de Datos (v3 - Final Personalizado)
+# Trabajo Práctico Intermedio: Diseño del Modelo de Datos 
 **Curso:** Desarrollo Back End  
 **Proyecto:** Nuevo Techo Propiedades & Hogar (ERP/Back-office de Inmobiliaria)  
 **Autor:** Leandro Spitale  
