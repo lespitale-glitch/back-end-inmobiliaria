@@ -10,9 +10,9 @@
 Esta aplicación es un sistema de gestión interna y back - office para la inmobiliaria **"Nuevo Techo Propiedades & Hogar"**, diseñados para que los **agentes de la empresa** administren el catalogo de inmuebles en venta/alquiler y supervisen la solicitudes de contacto recibidas.
 
 Para dar respuesta al modelo de negocio, se identifican las siguientes colecciones:
-*   **Usuarios (Quién usa el sistema):** El personal de la inmobiliaria (Agentes), con un campo para diferenciar permisos (administrador vs. agente) [1].
-*   **Entidad Principal (Corazón del negocio):** Las **Propiedades** del catálogo que la inmobiliaria gestiona [1].
-*   **Entidad Referenciada:** Los **Tipos de Propiedad** (Casa, Departamento, etc.) para normalizar el catálogo y evitar inconsistencias [1].
+*   **Usuarios (Quién usa el sistema):** El personal de la inmobiliaria (Agentes), con un campo para diferenciar permisos (administrador vs. agente).
+*   **Entidad Principal (Corazón del negocio):** Las **Propiedades** del catálogo que la inmobiliaria gestiona.
+*   **Entidad Referenciada:** Los **Tipos de Propiedad** (Casa, Departamento, etc.) para normalizar el catálogo y evitar inconsistencias.
 *   **Colección Adicional:** **Contactos** para almacenar las solicitudes directas del formulario de tasación de la web.
 
 ---
