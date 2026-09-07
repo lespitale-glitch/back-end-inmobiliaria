@@ -117,7 +117,7 @@ Registra las peticiones de contacto recibidas desde el Front-End en React.
 Acá explico por qué decidí separar las cosas en colecciones distintas en vez de meter todo junto amontonado, que es clave para que la base de datos no sea un dolor de cabeza en el futuro:
 
 1.  **Colección `Tipos_Propiedad` (Referenciada):**
-    *   *Para evitar un quilombo en los filtros:* Si ponía el tipo de propiedad como un simple texto libre embebido dentro de cada inmueble (ej: tipo: `\"Depto\"`), los agentes iban a escribir cualquier cosa por error. Uno iba a poner `\"Depto\"`, otro `\"departamento\"`, otro `\"Dpto\"` o `\"PH\"` con minúsculas. Cuando quisiéramos programar el buscador filtrado en React, se nos iba a romper todo o iba a ser un dolor de cabeza unificar criterios. Referenciar una colección estricta obliga a usar categorías estandarizadas desde un menú desplegable.
+    *   *Para evitar problemas en los filtros:* Si ponía el tipo de propiedad como un simple texto libre embebido dentro de cada inmueble (ej: tipo: `\"Depto\"`), los agentes iban a escribir cualquier cosa por error. Uno iba a poner `\"Depto\"`, otro `\"departamento\"`, otro `\"Dpto\"` o `\"PH\"` con minúsculas. Cuando quisiéramos programar el buscador filtrado en React, se nos iba a romper todo o iba a ser un dolor de cabeza unificar criterios. Referenciar una colección estricta obliga a usar categorías estandarizadas desde un menú desplegable.
     *   *Mantenibilidad:* Si el día de mañana la inmobiliaria decide renombrar `\"PH\"` a `\"Propiedad Horizontal\"` o agregar `\"Local Comercial\"`, basta con editar un único documento en `Tipos_Propiedad` y el cambio se refleja al instante en todo el sistema, sin tener que andar tocando miles de propiedades cargadas.
 
 2.  **Colección `Usuarios` (Referenciada):**
@@ -125,7 +125,7 @@ Acá explico por qué decidí separar las cosas en colecciones distintas en vez 
     *   *Mantenibilidad:* Al referenciar el `agente_id`, si el agente llega a cambiar su número de teléfono corporativo, su mail o su contraseña de acceso, lo modificamos en un solo documento dentro de la colección `Usuarios` y listo, no hay riesgo de que queden registros viejos o inconsistentes en las propiedades.
 
 3.  **Colección `Contactos` -> Referencia a `Tipos_Propiedad`:**
-    *   *Coherencia con el formulario:* En el formulario de tasación de la web de React, el cliente elige el tipo de propiedad desde un `<select>`. Enviar el ID del tipo de propiedad referenciado hace que la base de datos guarde la consulta de manera limpia y estructurada, facilitando que después podamos filtrar los mensajes recibidos por tipo de inmueble de interés sin que se mezcle nada.
+    *   *Coherencia con el formulario:* En el formulario de tasación de mi web, el cliente elige el tipo de propiedad desde un `<select>`. Enviar el ID del tipo de propiedad referenciado hace que la base de datos guarde la consulta de manera limpia y estructurada, facilitando que después podamos filtrar los mensajes recibidos por tipo de inmueble de interés sin que se mezcle nada.
 
 4.  **Amenidades e Imágenes (Embebidas como Arrays dentro de `Propiedades`):**
     *   *Relación contenida:* Las imágenes y las características cualitativas (como `\"Jardín\"`, `\"Pileta\"` o `\"Balcón\"`) le pertenecen exclusivamente a un inmueble y no tienen lógica propia fuera de él. Al embeberlas en Arrays de Strings dentro de `Propiedades`, optimizamos la velocidad de lectura: en una sola consulta traemos la ficha de la propiedad con todas sus fotos y detalles cualitativos, haciendo que la página vuele.
