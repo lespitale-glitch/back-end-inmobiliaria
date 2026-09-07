@@ -7,15 +7,13 @@
 
 ## Sección 1: Elección del Dominio
 
-El dominio seleccionado consiste en un **Sistema de Gestión Interna y Back-office para la Inmobiliaria "Nuevo Techo Propiedades & Hogar"**. A diferencia de un portal público genérico, este sistema está diseñado para el uso interno exclusivo del personal de la inmobiliaria (agentes y administradores) con el fin de alimentar y controlar el catálogo dinámico de la web pública, gestionar el flujo de contactos y procesar tasaciones.
+Esta aplicación es un sistema de gestión interna y back - office para la inmobiliaria **"Nuevo Techo Propiedades & Hogar"**, diseñados para que los **agentes de la empresa** administren el catalogo de inmuebles en venta/alquiler y supervisen la solicitudes de contacto recibidas.
 
-La plataforma permite:
-1.  **Administrar el catálogo de propiedades:** Controlar altas, bajas y modificaciones (CRUD) de inmuebles en alquiler o venta, registrando sus características y amenidades detalladas.
-2.  **Asignación de Agentes:** Vincular cada propiedad con el agente inmobiliario responsable directo de las visitas y la negociación.
-3.  **Clasificación Estandarizada:** Normalizar categorías de inmuebles (Casa, Departamento, Oficina, PH) para evitar inconsistencias en las búsquedas.
-4.  **Gestión de Consultas y Tasaciones:** Almacenar y ordenar cronológicamente las solicitudes enviadas por los clientes mediante el formulario de tasación de la web.
-
-Los actores principales del sistema son los **Agentes** (con roles de *administrador* o *agente*), quienes gestionan las **Propiedades** y las categorías de **Tipos de Propiedad**. Por otro lado, la web registra los datos del formulario de **Contactos** (clientes interesados en tasar o consultar).
+Para dar respuesta al modelo de negocio, se identifican las siguientes colecciones:
+*   **Usuarios (Quién usa el sistema):** El personal de la inmobiliaria (Agentes), con un campo para diferenciar permisos (administrador vs. agente) [1].
+*   **Entidad Principal (Corazón del negocio):** Las **Propiedades** del catálogo que la inmobiliaria gestiona [1].
+*   **Entidad Referenciada:** Los **Tipos de Propiedad** (Casa, Departamento, etc.) para normalizar el catálogo y evitar inconsistencias [1].
+*   **Colección Adicional:** **Contactos** para almacenar las solicitudes directas del formulario de tasación de la web.
 
 ---
 
