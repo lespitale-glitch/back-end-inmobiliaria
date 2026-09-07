@@ -181,7 +181,7 @@ Registra las peticiones de contacto recibidas desde el Front-End en React.
 ]
 ```
 
-### 3. Colección: `Propiedades` *(Basado en las Cards reales de tu web)*
+### 3. Colección: `Propiedades` 
 ```json
 [
   {
@@ -226,7 +226,7 @@ Registra las peticiones de contacto recibidas desde el Front-End en React.
 ]
 ```
 
-### 4. Colección: `Contactos` *(Basado en el Formulario de Tasaciones real de tu web)*
+### 4. Colección: `Contactos`
 ```json
 [
   {
