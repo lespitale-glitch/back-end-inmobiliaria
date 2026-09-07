@@ -114,8 +114,6 @@ Registra las peticiones de contacto recibidas desde el Front-End en React.
 
 ## Sección 3: Justificación de "Embeber vs. Referenciar"
 
-Acá explico por qué decidí separar las cosas en colecciones distintas en vez de meter todo junto amontonado, que es clave para que la base de datos no sea un dolor de cabeza en el futuro:
-
 1.  **Colección `Tipos_Propiedad` (Referenciada):**
     *   *Para evitar problemas en los filtros:* Si ponía el tipo de propiedad como un simple texto libre embebido dentro de cada inmueble (ej: tipo: `\"Depto\"`), los agentes iban a escribir cualquier cosa por error. Uno iba a poner `\"Depto\"`, otro `\"departamento\"`, otro `\"Dpto\"` o `\"PH\"` con minúsculas. Cuando quisiéramos programar el buscador filtrado en React, se nos iba a romper todo o iba a ser un dolor de cabeza unificar criterios. Referenciar una colección estricta obliga a usar categorías estandarizadas desde un menú desplegable.
     *   *Mantenibilidad:* Si el día de mañana la inmobiliaria decide renombrar `\"PH\"` a `\"Propiedad Horizontal\"` o agregar `\"Local Comercial\"`, basta con editar un único documento en `Tipos_Propiedad` y el cambio se refleja al instante en todo el sistema, sin tener que andar tocando miles de propiedades cargadas.
@@ -134,8 +132,6 @@ Acá explico por qué decidí separar las cosas en colecciones distintas en vez 
 
 ## Sección 4: Índices Propuestos
 
-Para que la API vuele y el servidor de Express procese todas las búsquedas de la web de React de forma instantánea, propongo estos índices optimizados:
-
 1.  **Índice Único en `email` (Colección `Usuarios`):**
     *   *Propósito:* Asegura que a nivel de motor de base de datos no existan duplicados de cuentas de agentes, previniendo colisiones en el login.
 2.  **Índice Compuesto en `precio` y `operacion` (Colección `Propiedades`):**
@@ -148,8 +144,6 @@ Para que la API vuele y el servidor de Express procese todas las búsquedas de l
 ---
 
 ## Sección 5: Documentos de Ejemplo (Formato JSON)
-
-A continuación, presento documentos coherentes y basados en los datos de las cards de tu web real **"Nuevo Techo Propiedades & Hogar"**, garantizando la **integridad referencial** mediante IDs que simulan un entorno real:
 
 ### 1. Colección: `Usuarios`
 ```json
